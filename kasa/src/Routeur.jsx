@@ -1,24 +1,33 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home/index.jsx';
-import APropos from './pages/APropos.jsx';
-import FicheLogement from './pages/FicheLogement.jsx';
-import Error404 from './pages/Erreur404.jsx';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/index.jsx";
+import Propos from "./pages/Propos.jsx";
+import FicheLogement from "./pages/FicheLogement.jsx";
+import Error from "./pages/Erreur404.jsx";
+import logementData from "./data/logements.json";
 
-function Routeur () {
-    ReactDOM.render(
-        <React.StrictMode>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/a-propos" element={<APropos />} />
-                    <Route path="/" element={<FicheLogement />} />
-                </Routes>
-                      </Router>
-        </React.StrictMode>,
-    document.getElementById('root')
-    )
+function Routeur() {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/a-propos" element={<Propos />} />
+
+          {logementData.map((logement) => (
+            <Route
+              key={logement.id}
+              path={`/fiche-logement/${logement.id}`}
+              element={<FicheLogement id={logement.id} />}
+            />
+          ))}
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Router>
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
 }
 
-export default Routeur
+export default Routeur;

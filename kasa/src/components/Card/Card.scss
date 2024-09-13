@@ -1,0 +1,42 @@
+.gallery {
+    width: calc(100% - 2 * 100px - 2 * 50px);
+    margin: 0 100px;
+    padding: 50px;
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 60px;
+    row-gap: 50px;
+
+
+    .carte {
+        display: block;
+        width: calc((100% - 2 * 60px) / 3);
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+
+    p {
+        width: calc(100% - 2 * 20px);
+        height: 30%;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: left;
+        overflow-wrap: break-word;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        display: flex;
+        justify-content: start;
+        align-items: flex-end;
+
+    }
+}

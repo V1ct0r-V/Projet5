@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "titre": "Chez vous, partout et ailleurs",
+        "source": "../assets/image1.png",
+        "description" : "Falaise en bord de mer"    
+    }
+    ,
+    {
+        "id": 2,
+        "titre": "",
+        "source": "../assets/image2.png",
+        "description": "Montagne et forêt de pins"
+    }
+]

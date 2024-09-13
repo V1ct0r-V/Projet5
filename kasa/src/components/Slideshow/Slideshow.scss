@@ -1,0 +1,43 @@
+.slideshow {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .active__picture {
+        width: 100%;
+        aspect-ratio: 1240 / 415;
+        object-fit: cover;
+    }
+
+    .previous__picture,
+    .next__picture {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        padding: 1rem;
+        font-size: 56px;
+    }
+
+    .previous__picture {
+        left: 0;
+    }
+
+    .next__picture {
+        right: 0;
+    }
+
+    p {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        padding: 25px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+}
