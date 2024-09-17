@@ -10,7 +10,7 @@ function Cart() {
       </a>
     </figure>
   ));
-  return <section className="gallery">{listItems}</section>;
+  return <section className="liste__cartes">{listItems}</section>;
 }
 
 export default Cart;

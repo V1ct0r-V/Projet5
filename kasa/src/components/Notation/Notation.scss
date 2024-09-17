@@ -1,3 +1,18 @@
-.notes {
+span {
     text-align: center;
+
+    #rouge,
+    #grise {
+        font-size: 24px;
+        padding: 6px 0;
+        text-align: center;
+    }
+
+    #rouge {
+        color: #FF6060;
+    }
+
+    #grise {
+        color: #E3E3E3;
+    }
 }

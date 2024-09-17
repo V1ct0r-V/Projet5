@@ -1,19 +1,25 @@
 import Header from "../components/Header/Header.jsx";
-import Slideshow from "../components/Slideshow/Slideshow.jsx";
+import Gallery from "../components/Gallery/Gallery.jsx";
 import Button from "../components/Button/Button.jsx";
 import Notation from "../components/Notation/Notation.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 import logementData from "../data/logements.json";
 import Collapse from "../components/Collapse/Collapse.jsx";
+import { useParams } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-function FicheLogement({ id }) {
+function FicheLogement() {
+  const { id } = useParams();
   const logement = logementData.find((log) => log.id === id);
+  if (!logement) {
+    return <Navigate to="Error404" />;
+  }
   return (
     <>
       <Header />
       {
         <section className="fiche-logement">
-          <Slideshow id={logement.id} />
+          <Gallery id={logement.id} />
           <div className="rental__and__aside">
             <div className="rental__info">
               <h1 className="rental__title">{logement.title}</h1>

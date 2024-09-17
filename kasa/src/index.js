@@ -4,7 +4,6 @@ import './pages/Home/index.scss';
 import Routeur from './Routeur'
 import reportWebVitals from './reportWebVitals';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <Routeur />

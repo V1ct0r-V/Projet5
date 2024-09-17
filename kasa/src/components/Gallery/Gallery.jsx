@@ -1,18 +1,18 @@
-import "./Slideshow.scss";
+import "./Gallery.scss";
 import { useState } from "react";
 import logementData from "../../data/logements.json";
 
-export default function Slideshow({ id }) {
+export default function Gallery({ id }) {
   const logement = logementData.find((log) => log.id === id);
   const [count, setCount] = useState(0);
   const nombre = logement.pictures.length;
   return (
-    <div className="slideshow">
+    <div className="gallery">
       <span
         className="previous__picture"
         onClick={() => setCount(count === 0 ? nombre - 1 : count - 1)}
       >
-        {"<"}
+        <i className="fa-solid fa-chevron-left"></i>
       </span>
       <img
         className="active__picture"
@@ -23,7 +23,7 @@ export default function Slideshow({ id }) {
         className="next__picture"
         onClick={() => setCount(count === nombre - 1 ? 0 : count + 1)}
       >
-        {">"}
+        <i className="fa-solid fa-chevron-right"></i>
       </span>
       <p>
         {count + 1}/{nombre}

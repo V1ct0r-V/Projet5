@@ -12,9 +12,11 @@ export default function Propos() {
       <Header />
       <section className="a-propos__section">
         <Banner id={2} />
-        {collapse.map((prop) => (
-          <Collapse key={prop.id} title={prop.title} content={prop.content} />
-        ))}
+        <div className="collapse__section">
+          {collapse.map((prop) => (
+            <Collapse key={prop.id} title={prop.title} content={prop.content} />
+          ))}
+        </div>
       </section>
       <Footer />
     </>

@@ -7,8 +7,14 @@ export default function Collapse({ title, content }) {
   return (
     <div className="collapse__div">
       <div className="collapse__header" onClick={() => setIsOpen(!isOpen)}>
-        <p>{title}</p>
-        <span>{isOpen ? "˅" : "˄"}</span>
+        <p className="collapse__title">{title}</p>
+        <span className="collapse__button">
+          {isOpen ? (
+            <i className="fa-solid fa-chevron-up" id="ouvrir"></i>
+          ) : (
+            <i className="fa-solid fa-chevron-up" id="fermer"></i>
+          )}
+        </span>
       </div>
       {isOpen && (
         <div className="collapse__content">

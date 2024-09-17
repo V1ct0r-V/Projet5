@@ -5,7 +5,6 @@ import Home from "./pages/Home/index.jsx";
 import Propos from "./pages/Propos.jsx";
 import FicheLogement from "./pages/FicheLogement.jsx";
 import Error from "./pages/Erreur404.jsx";
-import logementData from "./data/logements.json";
 
 function Routeur() {
   ReactDOM.render(
@@ -14,14 +13,7 @@ function Routeur() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/a-propos" element={<Propos />} />
-
-          {logementData.map((logement) => (
-            <Route
-              key={logement.id}
-              path={`/fiche-logement/${logement.id}`}
-              element={<FicheLogement id={logement.id} />}
-            />
-          ))}
+          <Route path="/fiche-logement/:id" element={<FicheLogement />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
