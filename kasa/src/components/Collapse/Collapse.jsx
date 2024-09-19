@@ -16,15 +16,17 @@ export default function Collapse({ title, content }) {
           )}
         </span>
       </div>
-      {isOpen && (
-        <div className="collapse__content">
-          {Array.isArray(content) ? (
-            content.map((item, index) => <p key={index}>{item}</p>)
-          ) : (
-            <p>{content}</p>
-          )}
-        </div>
-      )}
+      <div
+        className={
+          isOpen ? "collapse__content extended" : "collapse__content collapsed"
+        }
+      >
+        {Array.isArray(content) ? (
+          content.map((item, index) => <p key={index}>{item}</p>)
+        ) : (
+          <p>{content}</p>
+        )}
+      </div>
     </div>
   );
 }
