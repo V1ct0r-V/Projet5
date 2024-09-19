@@ -106,16 +106,15 @@ $animation-duration: 0.5s;
         background-color: #f6f6f6;
         border-radius: 5px;
         overflow: hidden;
-
+        max-height: 0;
+        opacity: 0;
 
         &.extended {
             animation: extended $animation-duration forwards;
-
         }
 
         &.collapsed {
             animation: collapsed $animation-duration forwards;
-            padding: 0px 15px
         }
 
         p {

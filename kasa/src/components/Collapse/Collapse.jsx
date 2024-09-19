@@ -16,11 +16,7 @@ export default function Collapse({ title, content }) {
           )}
         </span>
       </div>
-      <div
-        className={
-          isOpen ? "collapse__content extended" : "collapse__content collapsed"
-        }
-      >
+      <div className={`collapse__content ${isOpen ? "extended" : "collapsed"}`}>
         {Array.isArray(content) ? (
           content.map((item, index) => <p key={index}>{item}</p>)
         ) : (
