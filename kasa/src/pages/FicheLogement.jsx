@@ -7,6 +7,7 @@ import logementData from "../data/logements.json";
 import Collapse from "../components/Collapse/Collapse.jsx";
 import { useParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import "../pages/Home/index.scss";
 
 function FicheLogement() {
   const { id } = useParams();

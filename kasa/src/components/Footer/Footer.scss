@@ -11,6 +11,7 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     gap: 29px;
+    flex: 1;
 
     @media (max-width:$resolution) {
         margin-top: 0;

@@ -17,14 +17,18 @@ $resolution : 1200px;
   padding: 0%;
 }
 
+html,
 body,
-.root {
+#root {
   width: 100%;
-  min-height: 100%;
+  height: 100vh;
   font-family: 'Montserrat', sans-serif;
   color: $noir;
   font-size: 24px;
   font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -82,20 +86,23 @@ a {
   flex-direction: column;
   align-items: center;
   column-gap: 30px;
+  flex: 1;
 
   @media (max-width: $resolution) {
     margin-bottom: 19px;
   }
-}
 
-.collapse__section {
-  width: calc(100% * (1023 / 1240) - 2 * 100px);
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
 
-  @media (max-width: $resolution) {
-    width: calc(100% - 2 * 20px);
+  .collapse__section {
+    width: calc(100% * (1023 / 1240) - 2 * 100px);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width: $resolution) {
+      width: calc(100% - 2 * 20px);
+      gap: 20px;
+    }
   }
 }
 
@@ -104,6 +111,7 @@ a {
   width: calc(100% - 2 * 100px);
   height: fit-content;
   padding: 0 100px;
+  flex: 1;
 
   @media (max-width: $resolution) {
     width: calc(100% - 2 * 20px);
